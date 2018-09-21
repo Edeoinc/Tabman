@@ -21,6 +21,8 @@ public extension TabmanBar {
         public private(set) var image: UIImage?
 		/// Context of the item for external reference.
 		public private(set) var context: Any?
+
+        public private(set) var imagerenderingMode: UIImageRenderingMode?
         
         public var accessibilityLabel: String?
         public var accessibilityHint: String?
@@ -41,9 +43,10 @@ public extension TabmanBar {
         ///
         /// - Parameter image: Image to display.
         /// - Parameter context: Object that can be used to provide external context for the item.
-        public init(image: UIImage, context: Any? = nil) {
+        public init(image: UIImage, context: Any? = nil, imageRenderingMode: UIImageRenderingMode? = nil) {
             self.image = image
 			self.context = context
+            self.imagerenderingMode = imageRenderingMode
         }
       
         /// Create an item with a title and an image
@@ -51,10 +54,11 @@ public extension TabmanBar {
         /// - Parameter title: The title to display.
         /// - Parameter image: Image to display.
         /// - Parameter context: Object that can be used to provide external context for the item.
-        public init(title: String, image: UIImage, context: Any? = nil) {
+        public init(title: String, image: UIImage, context: Any? = nil, imageRenderingMode: UIImageRenderingMode? = nil) {
             self.title = title
             self.image = image
 			self.context = context
+            self.imagerenderingMode = imageRenderingMode
         }
     }
 }
